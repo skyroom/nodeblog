@@ -64,6 +64,7 @@ router.post('/', checkNotLogin, function(req, res, next) {
     // 用户信息写入数据库
     UserModel.create(user)
         .then(function(result) {
+            console.log('result', result);
             // 此 user 是插入 mongodb 后的值，包含 _id
             user = result.ops[0];
 
